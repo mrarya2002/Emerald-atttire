@@ -25,7 +25,7 @@ export default function AddProduct() {
     description: "",
     price: "",
     category: "",
-    // sizes: [] as string[],
+    sizes: [] as string[],
     // colors: [] as string[],
     images: [] as string[],
     is_new: false,
@@ -67,22 +67,22 @@ export default function AddProduct() {
     }))
   }
 
-  // const addSize = () => {
-  //   if (newSize && !formData.sizes.includes(newSize)) {
-  //     setFormData((prev) => ({
-  //       ...prev,
-  //       sizes: [...prev.sizes, newSize],
-  //     }))
-  //     setNewSize("")
-  //   }
-  // }
+  const addSize = () => {
+    if (newSize && !formData.sizes.includes(newSize)) {
+      setFormData((prev) => ({
+        ...prev,
+        sizes: [...prev.sizes, newSize],
+      }))
+      setNewSize("")
+    }
+  }
 
-  // const removeSize = (size: string) => {
-  //   setFormData((prev) => ({
-  //     ...prev,
-  //     sizes: prev.sizes.filter((s) => s !== size),
-  //   }))
-  // }
+  const removeSize = (size: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      sizes: prev.sizes.filter((s) => s !== size),
+    }))
+  }
 
   // const addColor = () => {
   //   if (newColor && !formData.colors.includes(newColor)) {
@@ -113,7 +113,7 @@ export default function AddProduct() {
           description: formData.description,
           price: Number.parseFloat(formData.price),
           category: formData.category,
-          // sizes: formData.sizes,
+          sizes: formData.sizes,
           // colors: formData.colors,
           images: formData.images,
           is_new: formData.is_new,
@@ -227,7 +227,7 @@ export default function AddProduct() {
           </div>
 
           <div className="space-y-6">
-            {/* <Card>
+            <Card>
               <CardHeader>
                 <CardTitle>Sizes</CardTitle>
               </CardHeader>
@@ -253,7 +253,7 @@ export default function AddProduct() {
               </CardContent>
             </Card>
 
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle>Colors</CardTitle>
               </CardHeader>

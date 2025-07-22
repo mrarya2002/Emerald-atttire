@@ -36,6 +36,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         .single()
 
       if (error) throw error
+      console.log(data);
       setProduct(data)
     } catch (error) {
       console.error("Error fetching product:", error)
@@ -64,7 +65,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   }
 
   const handleAddToCart = () => {
-    // if (!selectedSize || !selectedColor) return
+    if (!selectedSize ) return
 
     addToCart({
       ...product,
@@ -131,7 +132,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
           <p className="text-muted-foreground">{product.description}</p>
 
           <div className="space-y-4">
-            {/* {product.sizes.length > 0 && (
+            {product.sizes.length > 0 && (
               <div>
                 <h3 className="font-medium mb-2">Size</h3>
                 <div className="flex flex-wrap gap-2">
@@ -150,7 +151,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </div>
             )}
 
-            {product.colors.length > 0 && (
+            {/* {product.colors.length > 0 && (
               <div>
                 <h3 className="font-medium mb-2">Color</h3>
                 <div className="flex flex-wrap gap-2">

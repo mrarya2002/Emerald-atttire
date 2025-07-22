@@ -4,7 +4,7 @@ export interface Product {
   description: string
   price: number
   category: string
-  // sizes: string[]
+  sizes: string[]
   // colors: string[]
   images: string[]
   is_new: boolean

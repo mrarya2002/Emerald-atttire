@@ -46,7 +46,7 @@ export default function CartPage() {
                         {item.selectedSize && `Size: ${item.selectedSize}`}
                         {item.selectedColor && `, Color: ${item.selectedColor}`}
                       </p>
-                      <p className="font-bold mt-1">${item.price.toFixed(2)}</p>
+                      <p className="font-bold mt-1">₹{item.price.toFixed(2)}</p>
                     </div>
                     <div className="flex items-center mt-4 sm:mt-0">
                       <Button
@@ -99,7 +99,7 @@ export default function CartPage() {
             <CardContent className="space-y-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
@@ -112,7 +112,7 @@ export default function CartPage() {
               <Separator />
               <div className="flex justify-between font-bold">
                 <span>Total</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toFixed(2)}</span>
               </div>
             </CardContent>
             <CardFooter>

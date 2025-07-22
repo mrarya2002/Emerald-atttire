@@ -60,7 +60,7 @@ function ProductCard({ product }: { product: Product }) {
               quantity: 1,
               description: "", 
               // or product.description if available
-              // sizes: [],
+              sizes: [],
               // colors: [],
               images: [],
               is_new: false,
